@@ -1,7 +1,16 @@
-# Translation Patterns: External Practice → WorkBuddy Execution
+# Translation Patterns: External Practice → Native Execution
 
 Reference for Step 4 of the distillation workflow. Concrete examples of how to
-translate external practices into WorkBuddy's native mechanisms.
+translate external practices into the agent's native mechanisms.
+
+> **How to use this file:** Each pattern has a universal structure:
+> `[external practice] → [trigger] + [action on current platform]`.
+> The *trigger* is portable; the *action* names specific tools. If running on
+> a different platform, keep the trigger, swap the tool names.
+> WorkBuddy tool reference: `~/.workbuddy/MEMORY.md` (cross-project memory),
+> workspace `memory/MEMORY.md` (project memory), `conversation_search` (history),
+> `TaskCreate` (task tracking), `SkillManage` (skill CRUD), `present_files`
+> (result delivery), `show_widget` (inline visuals), `Bash` (command execution).
 
 ## Pattern 1: Periodic Audit → Trigger-Based Maintenance
 

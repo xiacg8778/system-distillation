@@ -179,3 +179,49 @@ Before claiming this skill is applied:
 - [ ] Blueprint document created and presented
 - [ ] Phase 1 actions stated as already-starting, not future-tense
 - [ ] No banned verification phrases used ("should", "theoretically")
+
+## Effectiveness Tracking
+
+A skill that is never measured for impact is just documentation. Track
+effectiveness with these signals, checked at the 3rd and 5th use:
+
+**Short-term signals (check after each use):**
+- Did at least one written discipline get re-read in a later session?
+  (Search memory for the keyword line and check if it appears in context.)
+- Did the three-way classification produce at least 40% "already have" or
+  "not applicable"? If everything is "can absorb", the classification was
+  not honest — revisit with Pattern 6 in translation-patterns.md.
+
+**Medium-term signals (check at 3rd use):**
+- Count of disciplines written to MEMORY vs. count actually referenced later.
+  Target: >50% reference rate. Below that means entries are too vague or
+  lack keyword lines.
+- Has any absorbed discipline measurably changed output behavior?
+  (e.g., verification discipline → fewer "should work" phrases.)
+
+**Long-term signals (check at 5th use):**
+- Has a repeated error been avoided because a discipline was in memory?
+- Has the agent proactively started this workflow without the skill being
+  explicitly loaded? (Sign of true internalization.)
+
+If signals are weak after 5 uses, update this skill:
+- Vague disciplines → rewrite with sharper trigger conditions
+- Low reference rate → improve keyword lines in MEMORY entries
+- No behavior change → the "can absorb" classification may have been wrong
+
+Record each use in `references/usage-log.md` with date, target system, number
+of items classified per bucket, and which disciplines were written to memory.
+
+## Anti-Pattern: Self-Assessment Bias
+
+The most insidious failure mode of this skill is self-congratulation: the agent
+applies the skill, writes disciplines to memory, and declares success — without
+ever checking if those disciplines changed anything.
+
+Counter-measures:
+- Do NOT score this skill's effectiveness based on how it *feels* right after
+  use. Score it based on behavior change evidence gathered over multiple uses.
+- The first self-assessment is always inflated by enthusiasm. The 3rd-use
+  assessment, backed by reference-rate data, is the first trustworthy one.
+- If the agent cannot point to a specific moment where a written discipline
+  changed a decision, the discipline was probably too vague to be useful.
