@@ -1,6 +1,6 @@
 ---
 name: system-distillation
-description: "Analyze an external system, workspace, framework, or methodology to extract transferable disciplines, mechanisms, and design patterns that WorkBuddy itself can absorb for self-improvement. Triggered when the user asks to learn from, absorb, or evolve from an external system, workspace, repo, article, or methodology. Also triggered by reflection questions like 'can you learn and improve from this' after analyzing something. This skill produces a structured distillation of what to absorb, what already exists, and what to skip, plus an executable evolution blueprint, and immediately writes the absorbed disciplines into long-term memory."
+description: "Analyze an external system, workspace, framework, or methodology to extract transferable disciplines, mechanisms, and design patterns that WorkBuddy itself can absorb for self-improvement. Triggered when the user asks to learn from, absorb, or evolve from an external system, workspace, repo, article, or methodology. Also triggered by reflection questions like 'can you learn and improve from this' after analyzing something. This skill produces a structured distillation of what to absorb, what already exists, and what to skip, plus an executable evolution blueprint, and immediately writes the absorbed disciplines into long-term memory. Trigger keywords: learn from, absorb, distill, evolve, self-improve, what can you take away, 复盘, 提炼, 吸收, 演进, 自我改进, 这个框架哪里值得学, 能从中学到什么, 精华提炼, 最佳实践沉淀."
 agent_created: true
 ---
 
@@ -58,7 +58,7 @@ For workspaces: read governance docs + project index.
 For each notable practice, ask: *what problem does this solve, and what is the
 underlying mechanism?*
 
-Common mechanism categories:
+Common mechanism categories (full catalog with absorption signals: `references/mechanism-catalog.md`):
 
 | Category | Example |
 |---|---|
@@ -68,6 +68,8 @@ Common mechanism categories:
 | Skill/resource routing | Minimal necessary loading by scenario |
 | Knowledge maintenance | Periodic self-audit, merge, archive |
 | Isolation & numbering | Project separation, ID non-reuse |
+
+Read `references/mechanism-catalog.md` for the full table with "abstract pattern vs WorkBuddy current instance" columns and per-category absorption signals — it speeds up classification in Step 3.
 
 ### Step 3: Three-Way Classification
 
@@ -82,6 +84,13 @@ This is the actionable set — proceed to Step 4.
 **Not applicable (gray):** The mechanism relies on constraints WorkBuddy doesn't
 have (e.g., "session amnesia" that necessitates document-driven recovery).
 Skip these, but note why.
+
+**CHECKPOINT: present the three-way classification table to the user before
+proceeding.** If the table shows >60% "can absorb", warn the user — honest
+classification usually yields 40-50% "already have" or "not applicable"
+(see `references/translation-patterns.md` Pattern 6). Wait for user confirmation
+or correction before moving to Step 4. A misclassified bucket (especially
+"already have" → "can absorb") propagates into useless memory writes.
 
 ### Step 4: Translate to Executable Actions
 
@@ -102,6 +111,8 @@ External practice → WorkBuddy execution
 
 Each translation must specify: **trigger condition** and **concrete action**.
 
+For 6 ready-made translation templates (audit → trigger-based maintenance, verification → behavioral reflex, error → immediate sedimentation, etc.), read `references/translation-patterns.md` — copy the pattern, swap in the specific practice. Do not invent translations from scratch when a proven template exists.
+
 ### Step 5: Produce Evolution Blueprint
 
 Structure the output as a phased plan:
@@ -114,6 +125,12 @@ Structure the output as a phased plan:
 ### Step 6: Execute Immediately (Critical)
 
 Do not just write the blueprint. Immediately:
+
+**CHECKPOINT: show the user exactly what lines will be written into memory,
+and into which file.** Memory writes are the point of no return — once a
+discipline is in `~/.workbuddy/MEMORY.md`, it shapes future behavior across
+all projects. Present the proposed writes as a diff/preview and get explicit
+consent before executing. Only then proceed with the actual writes below.
 
 1. Write absorbed disciplines into `~/.workbuddy/MEMORY.md` (cross-project)
 2. Write project-specific lessons into workspace `memory/MEMORY.md`
@@ -211,6 +228,8 @@ If signals are weak after 5 uses, update this skill:
 
 Record each use in `references/usage-log.md` with date, target system, number
 of items classified per bucket, and which disciplines were written to memory.
+This is a mandatory final step — see "Resources" below for the file path and
+format template (the file itself contains Use 1 as a worked example).
 
 ## Anti-Pattern: Self-Assessment Bias
 
@@ -225,3 +244,15 @@ Counter-measures:
   assessment, backed by reference-rate data, is the first trustworthy one.
 - If the agent cannot point to a specific moment where a written discipline
   changed a decision, the discipline was probably too vague to be useful.
+
+## Resources
+
+All reference files live in `references/` (same directory as this SKILL.md).
+Read them at the indicated step — they contain worked examples and templates
+that the main workflow only summarizes.
+
+| File | Read at step | What it contains |
+|---|---|---|
+| `references/mechanism-catalog.md` | Step 2 | 6 mechanism categories with "abstract pattern vs WorkBuddy current instance" table + per-category absorption signals |
+| `references/translation-patterns.md` | Step 4 | 6 translation templates (external practice → trigger + action) with worked examples and the honest-classification test (Pattern 6) |
+| `references/usage-log.md` | Step 7 (end) | Running log of each use — date, target, bucket counts, disciplines written. Use 1 (2026-07-24) is a worked example of the format |
