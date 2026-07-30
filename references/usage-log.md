@@ -36,4 +36,30 @@ reassess at Use 3 with reference-rate data)
 
 ---
 
-_Next entry to be added on Use 2._
+## Use 2 — 2026-07-30
+
+**Target system:** `evaluate-skills` integration into `system-distillation`
+
+**Three-way classification:**
+- Already have: 2 (mechanism classification, user checkpoints)
+- Can absorb: 3 (package-action routing, pre-mutation evaluation gate, verdict feedback)
+- Not applicable: 1 (full Skill scoring for memory-only actions)
+
+**Skill change:**
+1. Added Step 4.5 to distinguish mechanism value from package trust.
+2. Routed concrete install/update/merge/create actions through `evaluate-skills`.
+3. Kept memory-only and blueprint-only actions on the lightweight path.
+4. Added isolated drafting for new candidates and explicit handling for all three verdicts.
+
+**Behavior evidence:**
+- Baseline: installation and merge scenarios did not invoke `evaluate-skills`.
+- After change: memory-only skipped evaluation; installation and merge required evaluation before mutation.
+- Static validation: candidate integrity passed, with no broken local links or duplicate names.
+
+**Follow-up (to be checked at Use 3):**
+- [ ] Did a real distillation-triggered Skill installation route through `evaluate-skills`?
+- [ ] Did any rejected package still yield a useful memory-only or freshly designed action?
+
+---
+
+_Next entry to be added on Use 3._

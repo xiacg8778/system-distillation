@@ -113,6 +113,40 @@ Each translation must specify: **trigger condition** and **concrete action**.
 
 For 6 ready-made translation templates (audit → trigger-based maintenance, verification → behavioral reflex, error → immediate sedimentation, etc.), read `references/translation-patterns.md` — copy the pattern, swap in the specific practice. Do not invent translations from scratch when a proven template exists.
 
+### Step 4.5: Route Skill-Package Actions
+
+After translating each mechanism, classify its implementation action before any
+installation or modification. **"Can absorb" means the mechanism is worth
+adopting; it is not permission to trust or install a Skill package.**
+
+| Action produced by the translation | Route |
+|---|---|
+| Write a behavioral rule, memory entry, or blueprint only | Continue this workflow; do not load `evaluate-skills` |
+| Install, import, update, replace, or consolidate a concrete Skill package | **REQUIRED SUB-SKILL:** Use `evaluate-skills` before any mutation |
+| Merge or absorb candidate capabilities into an installed Skill | Use `evaluate-skills` and name the intended installed target |
+| Create a new Skill from distilled ideas | Draft the candidate only in a temporary or otherwise isolated, non-installed location; then use `evaluate-skills` before writing to any installed Skill root or activating it |
+| Recommend discovering a Skill, but no candidate exists yet | Resolve a concrete candidate first, then immediately route it to `evaluate-skills`; evaluation cannot score an unspecified package |
+
+When routing to `evaluate-skills`, pass the candidate source/path, intended user
+outcome, operation (`install`, `update`, or `merge`), expected installation scope,
+and merge target when applicable. Treat the candidate as untrusted and keep the
+assessment read-only. Do not copy or abbreviate its rubric here; its current hard
+gates, scoring model, ecosystem comparison, report checkpoint, and authorization
+rules are authoritative.
+
+Handle its single recommendation as follows:
+
+- `DIRECT INSTALL` → continue only through the authorization and validation path
+  defined by `evaluate-skills`.
+- `MERGE / ABSORB` → continue only against the named target and after the required
+  confirmation; merge capabilities, never overwrite the target wholesale.
+- `HOLD / REJECT` → do not mutate the Skill ecosystem. Record the remediation or
+  rejected implementation option in the evolution blueprint.
+
+After the evaluation checkpoint is resolved, return its decision and evidence to
+this workflow. The mechanism may still be absorbed through a memory rule or a
+freshly designed action even when a particular package is rejected.
+
 ### Step 5: Produce Evolution Blueprint
 
 Structure the output as a phased plan:
@@ -184,6 +218,17 @@ trigger conditions, not as descriptions.
   of constraints WorkBuddy doesn't share. Classify honestly — "already have"
   and "not applicable" are valid and common outcomes.
 
+- **Treating "can absorb" as installation approval:** Mechanism value does not
+  establish package safety, quality, or ecosystem fit. Route concrete Skill
+  packages through `evaluate-skills` before installation or merge.
+
+- **Evaluating non-package actions:** Do not run a full Skill assessment for a
+  memory rule, behavioral habit, or blueprint-only action. The gate applies to a
+  concrete Skill package, not to every distilled mechanism.
+
+- **Duplicating another Skill's rubric:** Reference `evaluate-skills` as the
+  authoritative sub-skill. Copying its thresholds here creates version drift.
+
 - **No immediate execution:** The user asked to evolve, not to plan to evolve.
   Phase 1 actions should start in the same turn.
 
@@ -195,6 +240,9 @@ Before claiming this skill is applied:
 - [ ] At least one discipline written into long-term memory
 - [ ] Blueprint document created and presented
 - [ ] Phase 1 actions stated as already-starting, not future-tense
+- [ ] Every concrete Skill-package action was routed through `evaluate-skills`
+- [ ] Memory-only and blueprint-only actions did not trigger unnecessary Skill evaluation
+- [ ] No Skill ecosystem mutation occurred after a `HOLD / REJECT` decision
 - [ ] No banned verification phrases used ("should", "theoretically")
 
 ## Effectiveness Tracking
